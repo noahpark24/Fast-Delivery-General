@@ -1,0 +1,10 @@
+.folding {
+  width: 80vw;
+  padding: 15px 15px;
+  padding-bottom: 10px;
+  background: #fff;
+  border-radius: 10px;
+}
+h2 {
+  font-weight: 700;
+}
