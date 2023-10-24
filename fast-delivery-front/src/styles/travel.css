@@ -1,0 +1,25 @@
+.img {
+  margin: 20px auto;
+  width: 260px;
+  height: 240px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.info {
+  width: 300px;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+.info-travel {
+  margin-left: 8vw;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 20px;
+  }
+span {
+  display: inline;
+  font-weight: 700;
+}

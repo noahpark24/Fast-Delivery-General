@@ -1,0 +1,18 @@
+.folding {
+  max-width: 600px;
+  width: 80vw;
+  padding: 15px;
+  padding-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+h2 {
+  font-weight: 700;
+}
+
+.scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+  overflow-x: hidden;
+}

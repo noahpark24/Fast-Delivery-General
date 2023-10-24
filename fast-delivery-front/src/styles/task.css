@@ -1,0 +1,27 @@
+.line {
+  width: 0.5px;
+  height: 100%;
+  background: #3d1df377;
+}
+
+.task {
+  transition: 1s;
+  padding: 5px;
+  border: 1px solid #3d1df377;
+  border-radius: 5px;
+}
+
+.info {
+  width: 100px;
+}
+
+.id {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.dir {
+  font-size: 11px;
+  
+  line-height: 1.2;  
+}

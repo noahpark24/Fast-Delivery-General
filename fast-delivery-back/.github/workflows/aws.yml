@@ -1,0 +1,41 @@
+name: CI/CD with Docker and Lightsail
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-docker@v2
+        with:
+          docker-version: 24.0.6
+
+      - name: Build Docker Image
+        run: |
+          docker build -t back-backend:latest .
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker tag back-backend:latest ${{ secrets.DOCKER_USERNAME }}/fast-delivery-back:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/fast-delivery-back:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Docker
+        uses: docker/setup-docker@v2
+        with:
+          docker-version: 24.0.6
+
+      - name: Deploy to Lightsail
+        run: |
+          docker pull ${{ secrets.DOCKER_USERNAME }}/fast-delivery-back:latest
+          docker-compose build
+          docker-compose up
