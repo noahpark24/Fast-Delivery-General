@@ -12,9 +12,7 @@ services:
     ports:
       - '8080:8080'
     environment:
-      - MONGO_URL_TEST=${MONGO_URL_TEST}
-      - MONGO_PASSWORD_TEST=${MONGO_PASSWORD_TEST}
-      - URL=${URL}
+      - URL="mongodb://mongodb/fast-delivery-back"
     depends_on:
       - mongodb
     volumes:

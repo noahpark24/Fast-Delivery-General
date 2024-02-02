@@ -21,7 +21,7 @@ const Dealer = () => {
   const [users, setUsers] = useState<any[]>([]);
   const dispatch = useDispatch();
   const navigate = useRouter();
-  console.log(users);
+console.log(users);
 
   useEffect(() => {
     const getDeliverymansData = async () => {
@@ -42,28 +42,21 @@ const Dealer = () => {
   };
 
   return (
-    <div className="productScroll">
+    <div className='productScroll'>
+    
       {deliverymans.map((deliveryman) => {
         const correspondingUser = users.find(
-          (user) => deliveryman._id === user.deliveryManInfo
-        );
-
+          (user) => deliveryman._id === user.deliveryManInfo,
+        ); 
+    
         return (
           <div key={deliveryman._id}>
             <div className="flex items-center justify-between ">
               <div className="flex items-center">
                 <div className="mx-2">
-                  <Porcentaje
-                    percentage={
-                      deliveryman.current_deliveries !== 0
-                        ? Math.floor(
-                            (deliveryman.delivered /
-                              deliveryman.current_deliveries) *
-                              100
-                          )
-                        : 0
-                    }
-                  />
+                <Porcentaje
+            percentage={deliveryman.current_deliveries!==0?Math.floor((deliveryman.delivered / deliveryman.current_deliveries) * 100):0}
+          />
                 </div>
                 <div className="flex flex-col">
                   <h2
@@ -76,21 +69,19 @@ const Dealer = () => {
                       ? correspondingUser.name
                       : 'Nombre no encontrado'}
                   </h2>
-
+                  
                   <div>
                     <State
                       state={
-                        deliveryman.status
-                          ? deliveryman.current_deliveries ===
-                            deliveryman.delivered
+                         deliveryman.status
+                          ? deliveryman.current_deliveries === deliveryman.delivered
                             ? 'ENTREGADOS'
                             : 'EN CURSO'
                           : 'PENDIENTE'
                       }
                       bg={
                         deliveryman.status
-                          ? deliveryman.current_deliveries ===
-                            deliveryman.delivered
+                          ? deliveryman.current_deliveries === deliveryman.delivered
                             ? 'bg-green'
                             : 'bg-yellow'
                           : 'bg-purple'
@@ -101,7 +92,9 @@ const Dealer = () => {
                 </div>
               </div>
               <div className="mr-5">
-                <Photo scale="small" photo={correspondingUser.profile_img} />
+            
+    <Photo scale="small" photo={correspondingUser.profile_img} />
+
               </div>
             </div>
           </div>

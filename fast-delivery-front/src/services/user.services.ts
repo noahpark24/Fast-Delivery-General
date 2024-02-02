@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { UserLogin, UserRegister } from '@/types/user.types';
+import { UserLogin, UserRegister, UserUpdate } from '@/types/user.types';
 
 const apiURL: string = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -54,5 +54,27 @@ export default class User_Service {
         Authorization: `Bearer ${token}`,
       },
     });
+  }
+
+  async update_info(userId: string, newData: UserUpdate) {
+
+    const update = await axios.put(
+      `${apiURL}/users/update/${userId}`,
+      { newData },
+      {
+        withCredentials: true,
+      }
+    );
+    return update;
+  }
+  async getUser(userId: string) {
+
+    const user = await axios.get(
+      `${apiURL}/users/${userId}`,
+      {
+        withCredentials: true,
+      }
+    );
+    return user;
   }
 }

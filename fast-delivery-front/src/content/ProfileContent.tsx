@@ -1,20 +1,15 @@
 'use client';
-import Photo from '@/common/Photo';
-import Week from '../components/Week';
-import Details from '../components/Details';
-import '../styles/taskmanager.css';
+import '@/styles/Profile.css';
 import { useEffect, useState } from 'react';
-import { Payload, UserProfileData } from '@/types/user.types';
-import User_Service from '@/services/user.services';
+import { UserProfileData } from '@/types/user.types';
+import Link from 'next/link';
 import axios from 'axios';
-const TaskManager = () => {
-  const [selectedDay, setSelectedDay] = useState(
-    new Date().getDate().toString()
-  );
+import User_Service from '@/services/user.services';
+const ProfileContent = () => {
   const [user, setUser] = useState<UserProfileData>({
     name: '',
-    last_name: '',
-    deliveryManInfo: '',
+    last_name:'',
+    deliveryManInfo:'',
     _id: '',
     email: '',
     is_admin: false,
@@ -22,6 +17,7 @@ const TaskManager = () => {
     profile_img: '',
   });
   const [image, setImage] = useState('');
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -78,25 +74,42 @@ const TaskManager = () => {
   };
 
   return (
-    <div>
-      <div className="adminCont">
-        <label htmlFor="file-upload" style={{ cursor:'pointer'}} >
-          <Photo scale="big" photo={user.profile_img} />
+    <div className="flex flex-col items-center cont">
+      <div className="cont-picture">
+        <label htmlFor="file-upload">
+          <img
+            className="perfil"
+            src={user.profile_img}
+            alt="picture profile"
+          />
         </label>
         <input
           id="file-upload"
           type="file"
           onChange={handleImageUpload}
-          style={{ display: 'none'}}
-        />{' '}
-        <div className="ml-3">
-          <h2 className="h2TaskMan">¡Hola {user.name} {user.last_name}!</h2>
-          <p>Estos son los pedidos del dia</p>
+          style={{ display: 'none' }}
+        />
+      </div>
+      <h1 className="text-center">Nombre: {user.name} {user.last_name}</h1>
+      <h1 className="text-center">Email: {user.email}</h1>
+      <div className="flex my-auto">
+        <div className="mx-auto my-5 mb-3 btnCont-profile flex bg-green">
+          <Link href={'/user/home'} className=" my-auto ">
+            <button className="btn mx-auto " type="button">
+              Mis Paquetes
+            </button>
+          </Link>
+        </div>
+        <div className="mx-auto my-5 mb-3 btnCont-profile flex bg-green">
+          <Link href={'/user/get-products'} className=" my-auto ">
+            <button className="btn mx-auto " type="button">
+              Obtener paquetes
+            </button>
+          </Link>
         </div>
       </div>
-      <Week selectedDay={selectedDay} setSelectedDay={setSelectedDay} />
-      <Details selectedDate={Number(selectedDay)} />
     </div>
   );
 };
-export default TaskManager;
+
+export default ProfileContent;
