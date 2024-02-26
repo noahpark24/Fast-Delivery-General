@@ -5,13 +5,19 @@ Fast Delivery Es Una Aplicacion Creada Para Una Empresa De Ultima Milla Con Cien
 El Desarrollo Fue En Un Equipo De 4 Integrantes Organizandonos Con Trello y Trabajando Bajo La Metodologia SCRUM A Lo Largo De 3 Meses Donde Tuvimos Demos Semanales Para Mostrar Los Avanzes Del Proyecto 
 
 ## Tecnologias De Desarrollo Usadas 
-- Backend : Mongodb - Nodejs - Docker - Typescript
-- frontend : Next.js - Typescript - Redux - Tailwind
+
+Backend:
+
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
+frontend :
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
 
 ## Tecnologias Para deployment : 
-- Vercel
-- Amazon Lightsail
-- Mongo Atlas
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) ![Amazon Lightsail](https://img.shields.io/badge/Amazon_Lightsail-000000?style=for-the-badge&logo=amazon&logoColor=white) ![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+
 
 ## Vistas De Un Repartidor :
 <img src="./assets/deliverymanViews/login.png" alt="login" width="400" height="637">|<img src="./assets/deliverymanViews/home.png" alt="inicio de un repartidor" width="400">|<img src="./assets/deliverymanViews/takePackage.png" alt="tomar un paquete" width="400">|<img src="./assets/deliverymanViews/incidency.png" alt="inicio de un repartidor" width="400">|<img src="./assets/deliverymanViews/takedPackageDetails.png" alt="inicio de un repartidor" width="400">|
